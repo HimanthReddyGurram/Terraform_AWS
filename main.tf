@@ -24,6 +24,7 @@ resource "aws_internet_gateway" "him_gateway" {
 
 
 # # creating a route table and assingning routes through route method
+
 # resource "aws_route_table" "him_public_rt" {
 #   vpc_id = aws_vpc.him_vpc.id
 
@@ -36,6 +37,7 @@ resource "aws_internet_gateway" "him_gateway" {
 #   destination_cidr_block = "0.0.0.0/0"
 #   gateway_id             = aws_internet_gateway.him_gateway.id
 # }
+
 
 # # creating a route table and assingning routes through inline method
 resource "aws_route_table" "him_public_rt" {
@@ -160,14 +162,3 @@ variable subnet_params {
   default     = "10.0.1.0/24"
   description = "subnet cidr blocks and descriptions"
 }
-
-# terraform output  ---just prints the output parameters
-# terraform refresh --- just refreshes the state and print output values if any
-# terraform destroy -target <instance_name>.<given_name> ex: aws_instance.him_instance---- only deletes a specific resource
-# terraform apply -target <instance_name>.<given_name> ex: aws_instance.him_instance---- only create a specific resource
-# terraform state list --- show all the resources
-# terraform state show <resource> ---show details about a specific resource
-
-
-
-
