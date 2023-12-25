@@ -1,6 +1,7 @@
 # AWS Terraform
 This project show cases how we use terraform to manage aws resources like ec2 instances, routes, vpc and subnets.
 In a similar way we can set up gateways, security groups and much more.
+We also install Tomcat server with this project.
 
 ## Requirements
 * You must have Terraform installed on your computer.
