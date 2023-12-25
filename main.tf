@@ -134,11 +134,13 @@ resource "aws_instance" "him_instance" {
 
 	user_data = <<-EOF
                 #!/bin/bash
-                sudo apt-get update
-                sudo apt-get install -y apache2
-                sudo systemctl start apache2
-                sudo systemctl enable apache2
-                echo "<h1>Deployed via Terraform</h1>" | sudo tee /var/www/html/index.html
+                sudo apt-get update -y
+                sudo apt install openjdk-11-jdk-headless -y
+                sudo su
+                cd /opt
+                wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.84/bin/apache-tomcat-9.0.84.tar.gz
+                tar -xvf apache-tomcat-9.0.84.tar.gz
+                cd apache-tomcat-9.0.84.tar.gz/bin/startup.sh
               EOF
 
   tags = {
